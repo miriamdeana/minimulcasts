@@ -46,6 +46,10 @@ class VendorsController < ApplicationController
   # PATCH/PUT /vendors/1
   # PATCH/PUT /vendors/1.json
   def update
+    vendor = @vendor_service.query("SELECT * FROM VENDOR WHERE GivenName = '#{vendor_params[:name]}'").entries.first
+    vendor.email_address = vendor_params[:email_address]
+    @vendor_service.update(vendor)
+
     respond_to do |format|
       if @vendor.update(vendor_params)
         format.html { redirect_to @vendor, notice: 'Vendor was successfully updated.' }
