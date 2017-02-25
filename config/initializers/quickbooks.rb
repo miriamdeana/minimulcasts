@@ -1,5 +1,5 @@
-QB_KEY = "qyprd6p43g54meFWkdGCIva846ado3"
-QB_SECRET = "shx0jYkGycEIQTeQAlxe3Yo2AKY58K6xCh5phBzt"
+QB_KEY = "<your_quickbooks_key"
+QB_SECRET = "<your_quickbooks_secret"
 
 $qb_oauth_consumer = OAuth::Consumer.new(QB_KEY, QB_SECRET, {
     :site                 => "https://oauth.intuit.com",
